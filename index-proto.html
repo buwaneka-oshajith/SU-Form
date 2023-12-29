@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibitors Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            display: inline-block;
+            width: calc(100% - 160px);
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .radio-group {
+            display: flex;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .radio-group label {
+            margin-right: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .textbox {
+            background-color: lightblue;
+            padding: 15px;
+            border-radius: 10px;
+            width: 70%;
+            margin-bottom: 20px;
+        }
+
+        .topic {
+            font-weight: bold;
+        }
+
+        .points {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Exhibitors Application Form</h2>
+    <form action="process_exhibitor_form.php" method="post">
+        <div>
+            <label for="companyName">Company Name:</label>
+            <input type="text" name="companyName" required>
+        </div>
+
+        <div>
+            <label for="address">Address:</label>
+            <textarea name="address" rows="4" required></textarea>
+        </div>
+
+        <div>
+            <label for="telephone">Telephone:</label>
+            <input type="tel" name="telephone" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="contactPerson">Contact Person:</label>
+            <input type="text" name="contactPerson" required>
+        </div>
+
+        <div>
+            <label for="position">Position of Contact Person:</label>
+            <input type="text" name="position" required>
+        </div>
+
+        <div class="radio-group">
+            <label>Member Type:</label>
+            <label><input type="radio" name="memberType" value="associateMember" required> Associate Member</label>
+            <label><input type="radio" name="memberType" value="nonMember" required> Non-Member</label>
+        </div>
+
+        <table>
+            <tr>
+                <th rowspan="2">Stall</th>
+                <th colspan="2" >Associate</th>
+                <th colspan="2"  >Non-Associate</th>
+            </tr>
+            <tr>
+                <td rowspan="1">Shell</td>
+                <td>Bare</td>
+                <td>Shell</td>
+                <td>Bare</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>46</td>
+                <td>56</td>
+                <td>51</td>
+                <td>63</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>72</td>
+                <td>67</td>
+                <td>80</td>
+                <td>74</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>72</td>
+                <td>67</td>
+                <td>80</td>
+                <td>74</td>
+            </tr>
+            <tr>
+                <td colspan="5">Out Door Area Blocks</td>
+                
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>72</td>
+                
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>72</td>
+                
+            </tr>
+        </table>
+
+        <div class="textbox">
+            <div class="topic">Topic 1</div>
+            <div class="points">
+                <ul>
+                    <li>Point 1</li>
+                    <li>Point 2</li>
+                    <li>Point 3</li>
+                    <li>Point 4</li>
+                </ul>
+            </div>
+        
+            <div class="topic">Topic 2</div>
+            <div class="points">
+                <ul>
+                    <li>Point 1</li>
+                    <li>Point 2</li>
+                    <li>Point 3</li>
+                    <li>Point 4</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="radio-group">
+            <label>Sector:</label>
+            <label><input type="radio" name="sector" value="sme" required> SME</label>
+            <label><input type="radio" name="sector" value="nonSme" required> Non-SME</label>
+        </div>
+
+        <table>
+            <tr>
+                <th >Sector</th>
+                <th >Criteria</th>
+                <th >Medium</th>
+                <th >Small</th>
+                <th >micro</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Service Sector</td>
+                <td>Annual Turn</td>
+                <td>RS251</td>
+                <td>Rs16</td>
+                <td>RS251</td>
+            </tr>
+            <tr>
+                <td>No of Employees</td>
+                <td>RS251</td>
+                <td>Rs16</td>
+                <td>RS251</td>
+            </tr>
+        </table>
+
+        <div>
+            <p >
+                We require  <input type="text" name="units" required> units of <input type="text" name="SQM" required> sqm. Bare space/with shell scheme of the cost of LKR
+                <input type="text" name="price" required> preferred stall No(s). Option 1 <input type="text" name="option1" required> option 2  <input type="text" name="option2" required> 
+                Total cost of LKR  <input type="text" name="price-t" required>.
+            </p>
+        </div>
+
+        <div>
+            <label for="telephone">Signature & Company Seal:</label>
+            <input type="tel" name="sig" required>
+        </div>
+
+        <div>
+            <label for="email">Date:</label>
+            <input type="email" name="Date" required>
+        </div>
+
+        <div>
+            <label for="contactPerson">Name :</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div>
+            <label for="position">Position :</label>
+            <input type="text" name="pos" required>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
